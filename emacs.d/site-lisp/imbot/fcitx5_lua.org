@@ -1,0 +1,70 @@
+-- 完整事件列表如下:
+-- local EventType = {
+--     ContextCreated = 0x0001000 | 0x1,
+--     ContextDestroyed = 0x0001000 | 0x2,
+--     FocusOut = 0x0001000 | 0x3,
+--     FocusIn = 0x0001000 | 0x4,
+--     KeyEvent = 0x0001000 | 0x5,
+--     SurroundingTextUpdated = 0x0001000 | 0x7,
+--     CursorRectChanged = 0x0001000 | 0x9,
+--     InputMethodActivated = 0x0001000 | 0xA,
+--     InputMethodDeactivated = 0x0001000 | 0xB,
+--     CommitString = 0x0002000 | 0x2,
+--     UpdatePreedit = 0x0002000 | 0x4,
+-- }
+
+local fcitx = require("fcitx")
+
+-- 注册我们的事件监听器以及转换器
+fcitx.watchEvent(fcitx.EventType.KeyEvent, "key_event")
+fcitx.addConverter("konge")
+
+-- 用于判断转换器是否需要开启
+local enable = false
+
+function key_event(sym, state, release)
+  -- Ctrl + Shift + Space
+  if state == fcitx.KeyState.Ctrl_Shift and sym == 32 and not release then
+    enable = not enable
+    if enable then
+      io.popen("notify-send '空格模式开启'")
+    else
+      io.popen("notify-send '空格模式关闭'")
+    end
+    print(string.format("change state of konge: %s", enable))
+  end
+  return false
+end
+
+function konge(str)
+  print(string.format("call konge: %s", enable))
+  if enable then
+    local tmp = string.gsub(str, utf8.charpattern, "%1 ")
+    if tmp ~= nil then
+      str = tmp
+    end
+  end
+  return str
+end
+
+fcitx.watchEvent(fcitx.EventType.KeyEvent, "switch_key_event")
+
+local fcitx_enable = false
+
+function switch_key_event(sym, state, release)
+  if state == fcitx.KeyState.Ctrl_Alt and sym == 32 and not release then
+    -- Ctrl + Alt + Space
+    -- for cdda
+    fcitx_enable = not fcitx_enable
+    if fcitx_enable then
+      io.popen("fcitx5-remote -o")
+      io.popen("notify-send '输入法激活'")
+    else
+      io.popen("fcitx5-remote -c")
+      io.popen("notify-send '输入法禁用'")
+    end
+    print(string.format("change state of ime: %s", fcitx_enable))
+    return true
+  end
+  return false
+end

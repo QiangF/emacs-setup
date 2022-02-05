@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: eg grid
+# key: eg_grid
+# --
+import matplotlib.gridspec as gridspec
+# set row and column
+gs = gridspec.GridSpec(, )
+# set spacing between axes 
+gs.update(wspace=0.0, hspace=0.0)
+# select sub figure
+host = plt.subplot(gs[i])

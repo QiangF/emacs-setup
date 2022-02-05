@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: plot figure
+# --
+# 单栏 3.27,1.96 全幅 6.93,4.16
+fig,ax = plt.subplots(figsize=(3.27,1.96), dpi=300)

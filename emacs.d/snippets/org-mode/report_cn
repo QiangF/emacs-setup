@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: odt chinese report file title
+# --
+#+options:  toc:nil author:nil tex:t latex:t :H 10
+#+odt_display_outline_level: 0
+#+language: zh-CN
+#+odt_styles_file: "~/.dotfiles/emacs/org/user/text_cn.xml"
+#+odt_content_template_file: "~/.dotfiles/emacs/org/user/default_template.xml"
+#+title: ${1}
+#+toc: headlines 2
+#+pagebreak:
+
+${0}

@@ -1,0 +1,381 @@
+
+!! This is the auto-generated APDL source of the ANSYS-Mode
+!! hands-on APDL tutorial (from A-M_in-depth_tutorial.org)
+!! Copyright (C) 2006 - 2015 H. Dieter Wilhelm GPL V3
+
+!! ==============================
+!! --- APDL editing ---
+!! ==============================
+
+!@ --- Extensible APDL templates ---
+
+!@@ -- Template preview --
+
+!! Check out all available and extendable APDL templates!
+!! Type "C-c C-s" to trigger the ANSYS-Mode template preview
+!! and then the <TAB> key for a completion window.
+!!
+
+!@@@ - APDL parametric- and *get functions -
+
+!! Write now "ansys-skeleton-function"!  Let Emacs complete
+!! your input (use the <TAB> key).  Conclude it with <RET>.
+!!
+
+!@@ -- Template insertion --
+
+!! Insert below the following line the structural template!  Type
+!! "M-x ansys-skeleton-structural-template" for insertion instead of
+!! previewing. (You can insert a template with "C-u C-c C-s" as well.)
+!!
+
+!! Insert below the following line `ansys-skeleton-outline-template'!
+!!
+
+!@@ -- Extending your templates --
+
+!! Type "C-h f" for Emacs' function help and write
+!! "ansys-skeleton-structural-template" (let Emacs complete it)!
+!!
+
+!! In the *help* window follow the link to the source file
+!! directly to the relevant skeleton function.
+
+!@@ -- Outlining or folding --
+
+!! Type "C-c @ C-t" to collapse the code to its headings
+!! Type "C-c @ C-e" to show a certain entry of a heading
+!! Type "C-c @ C-a" to show all again
+!!
+
+!@ --- Comments ---
+
+!@@ -- Place comments --
+
+!! Type "M-;" in the empty line below the code
+!!
+*if,I,eq,2,then
+
+!@@ -- Commenting (out) --
+
+!! Mark some text above (e. g. dragging the mouse with LMB or you
+!! can mark the section with "M-h") and then type "M-;"
+!!
+
+!! Mark above commented out code and retype "M-;"
+!!
+
+!@@ -- Code comments --
+
+!! Type "M-;" somewhere in the following code line
+!!
+nsel,s,loc,x,0,1
+
+!! Place the cursor in this line and type "M-;"
+!!
+nsel,s,loc,x,0,1!another inline comment
+
+!@@@ - Inline Comment continuation and indentation -
+
+!! Type "M-j" behind the inline comment
+!!
+nsel,s,loc,x,0,1         ! this is an `inline comment'
+
+!@@@ - Regular comment continuation and indentation -
+
+*if,I,eq,1,then
+  !! Type "M-j" behind this line
+*endif
+!! Emacs will break the line, insert and indent properly comment characters
+
+!@ --- The ANSYS-Mode help ---
+
+!! Type "C-h m" for reading the built-in mode help
+!! search for the section with its keybindings!
+!!
+
+!@ --- List all variable definitions ---
+
+!! Type "C-c C-v" for a summary window of variable definitions
+!! This includes also implicit definitions and component names
+!!
+
+!@ --- Alignment of assignments ---
+
+!! Place the cursor on the following section and type "C-c C-a"
+!!
+
+x=0.4!laskd
+y= 33.0     ! alskdl
+xzv= 9999990.3      !!
+llk = 0.333333333 !bla
+al_=  00.40
+aslfoeas = 304
+ka= .4      !salkd
+i = 4.              !as
+kasd=.3/0.4
+kasd =3./0.4
+xxx =asin(3.0)
+y = cos(i)
+
+!! Mark only a PART of following section and type "C-c C-a"
+!!
+
+x=0.4!laskd
+y= 33.0     ! alskdl
+xzv= 9999990.3      !!
+llk = 0.333333333 !bla
+al_=  00.40
+aslfoeas = 304
+ka= .4      !salkd
+i = 4.              !as
+kasd=.3/0.4
+kasd =3./0.4
+xxx =asin(3.0)
+y = cos(i)
+
+!@ --- Completions ---
+
+!! Check out all APDL symbols, up to date with the latest ANSYS version
+!! Place the cursor behind the 'c' character below and type "<ESC> <TAB>"
+!!
+c
+
+!! Let Emacs complete `cml' and apply (again) "M-?"
+!!
+cml
+
+!@@ -- Completion of functions --
+
+!! place the cursor behind 'aco' and type "<ESC> <TAB>" and so forth
+!!
+
+P = aco         ! lower case completion
+P = Sig         ! upper case completion
+P = ARNE        ! Capitalisation
+
+!@@ -- Element completions --
+
+!! Completion of element names: type "<ESC> <TAB>" behind `shell'
+!!
+shell
+
+!@@ -- APDL command completions --
+
+!! Completion of command names: type "<ESC> <TAB>" behind `a'
+!!
+a
+
+!! Note Emacs' message that `a' is already a valid ANSYS symbol!
+!! It is highlighted already as a command, but it is further completable.
+
+!@@ -- Dynamic completion --
+
+!! some code...
+very_long_Variable = 3
+vlV = 8
+!! type "M-/" repeatedly behind below character `v'
+!!
+v
+
+!@ --- ANSYS-Mode defined abbreviations ---
+
+!! type a <SPACE> behind the special character ``' and abbreviation characters
+!!
+`p                      ! The Pi assignment abbreviation
+`d                      ! Abbreviation of a *do loop
+`do                     ! Interactive *do loop abbrev.
+
+!! Type a "C-u M-x list-abbrevs" for a list of all mode defined abbreviations
+!!
+
+!@ --- Logical blocks (control statements) ---
+
+!@@ -- Closing of logical blocks --
+
+!! Place the cursor below or behind the block statements and type "C-c ]"!
+!!
+*if,1,eq,1,then
+
+*do,1,10
+
+*dowhile,1
+
+*create,test,mac
+
+!@@ --- Auto-indentation --
+
+!! Insert in between the following block e. g. a `*do' statement!
+!! Conclude the line(s) with "C-j" to receive an automatic indentation.
+!!
+
+*if,I,eq,1,then
+
+  /title,well well
+*endif
+
+!@ --- Emacs integrated programmable RPN calculator ---
+
+!! Place the cursor behind the equal sign and type "C-x * *"!
+!!
+Pi = 
+!! Type "P" (capital `p') in `Calc' and paste the value back into
+!! your APDL code with the <y> key, quit Calc with <q>.
+
+!! Type "df" in Calc for `display fixed' and then <3> before pasting
+!!
+Pi =
+
+!! Maybe above example is not so relevant because many of you are just
+!! using
+Pi = acos(-1)
+!! instead, but I hope you are getting the idea why to use Calc ;-)
+
+!@ --- ANSYS-Mode is highlighting APDL specials ---
+
+!@@ -- Reserved words and _RETURN statements --
+
+!!
+N = _RETURN           ! return value of certain commands
+_aaa = 9              ! reserved variables: preceding underscore "_"
+d,1,ux,%_FIX%         ! “current” relative displacement value
+Depth  = ARG1         ! ARG{1-9}, AR{10-19} = "*use" variables
+
+!@@ -- Old style APDL comments --
+
+var1 = sinh(cos(3 *5)) ! old style Ansys comment!!!!!
+var2 = sinh(cos(3*5))  ! this is valid code
+!!
+
+!@@ -- Ignored characters behind commands --
+
+f $ fi $ fin $ fini $ finis  $ finish $ finisher
+!!
+
+!@@ -- End Of File command --
+
+/eof --- WARNING: /eof crashes the Ansys GUI in interactive mode ---
+!!
+
+!@@ -- Current element types & deprecated elements
+
+!! A current element type:
+et,10,solid186
+!! deprecated element types:
+et,Steel,beam3 $ et,Alu,shell91
+!!
+
+!! Complete the following element fragments to current ones!
+!!
+et,Steel,beam $ et,Alu,shell
+
+!@ ==============================
+!@ --- APDL environment ---
+!@ ==============================
+!! Prerequisites:
+!! 1) A fully configured ANSYS-Mode and
+!! 2) a GNU-Linux or GNU-Linux system
+
+!! Erase all APDL code above ("M-< C-w")
+!!
+
+!@ --- Choose the license type for a run ---
+
+!! Type "C-c C-t"!  And select the required license type Use the
+!! <TAB> key to see the predefined types
+
+!@ --- Display available licenses ---
+
+!! Type "C-c C-l"!  Checking which licenses are free, in particular
+!! your chosen license
+!!
+
+!@ --- Start an ANSYS interpreter process ---
+
+!! Type "C-c RET"!
+!!
+
+!@ --- Interpreter communication  ---
+
+!@@ -- Sending APDL window contents --
+
+!! Reinsert the `structural' template below
+!!
+
+!@@@ - Send a code line or region to the interpreter  -
+
+!! Go to the beginning of above code and
+!! send the code line by line with "C-c C-c"!
+!!
+
+!@@@ - Send all code above the cursor position -
+
+!! Place the cursor below the `solve' command and
+!! type "C-c C-u" sending all code up to the beginning!
+!!
+
+!! We have got now data and results to work with
+
+!@ --- Graphical feedback ---
+
+!@@ -- Open the ANSYS `interactive graphics' frame  --
+
+!! Type "C-c C-g" to open the ANSYS `interactive' graphics frame.
+!! Then send the following line with "C-c C-c".
+!!
+eplot
+
+!@@ -- The Pan/Zoom/Rotate dialog --
+
+!! Type "C-c C-p" to open the ANSYS Pan/Zoom/Rotate dialog!
+!!
+
+!@@ -- Use the keybindings for zooming --
+
+!! "C-c C-+" Enlarge it
+!! "C-c C-f" Fit the graphics
+!! "C-c C--" Shrink it
+!!
+
+!@@ -- Use the keybindings for moving --
+
+!! "C-c C->" Move right
+!! "C-c C-_" Move down
+!! "C-c C-<" Move left
+!! "C-c C-^" Move up
+!!
+
+!! For these long keybindings Emacs' `repeat' command "C-x z" is helpful
+!! Insert "C-c C-<" and then "C-x z zzzzz"
+!!
+
+!@@ -- Use the keybindings for replotting and iso-view  --
+
+!! "C-c C-i" Show in Iso-view
+!! "C-c C-r" Replot the graphics
+!!
+
+!@@ -- Communicating directly with the interpeter  --
+
+!@@@ - Communicating from the APDL window  -
+
+!! Type "C-c C-q" and send your input directly to the interpreter!
+!! You are getting `queried' for input by Emacs.
+!! Input here: "/post1 <RET>" and then "C-c C-q set,list"
+!!
+
+!@@@ - Communicating within the *ANSYS* interactive window  -
+
+!! Place the cursor in the *ANSYS* interactive window and write
+!! "plnsol,u,sum", conclude the input with <RET>.
+!!
+
+!@@ -- Visiting the ANSYS error file --
+
+!! Type "C-c C-e" to open the run's error file in `tail-follow mode'!
+!! Always the latest content is shown...
+!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! End of APDL code
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

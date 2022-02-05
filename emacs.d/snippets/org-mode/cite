@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: cite
+# group: references
+# name : \cite
+# --
+
+\cite{${1:key$(unless yas/modified-p (let ((key (my-ebib-ivy-get-cite-key))) (if key key "no key received...")))}$0}

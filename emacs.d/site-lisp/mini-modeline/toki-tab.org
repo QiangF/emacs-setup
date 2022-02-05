@@ -1,0 +1,30 @@
+使用频率统计
+
+说到使用频率，最直接的体现应该是「在那个 buffer 中执行命令的次数」，这样的话只要定义一个 buffer-local 的变量来统计命令次数，在 post-command-hook 里面给它加 1 就好了。但是这样有两个问题：
+
+    使用鼠标滚轮的话，动一下就会执行好多个 mwheel-scroll 命令，总觉得有点不公平。
+    有时候打开一个 buffer 只是为了阅读，在里面执行的命令肯定没有编辑多，这也有点不公平。
+
+实际上我们使用一个 buffer 的状态，不管是编辑还是阅读，总是敲一些命令，停一停，再敲一些命令。停下来的时候 Emacs 就会进入空闲状态。所以最终决定的方案是利用 run-with-idle-timer，空闲一秒钟之后给当前 buffer 的使用频率加 1。试用下来以后发现效果不错。
+tab 展示
+
+tab 展示的逻辑就是将 buffer 分组后，把当前分组中使用频率最高的 4 个 buffer 展示出来。如果要用的 buffer 在这 4 个里，就用「前一个/后一个 tab」命令来切换；不在这 4 个里，就用 switch-buffer 之类的命令去切换。也就是说，当前 buffer 是可以不被 tab 展示出来的，初看起来可能有点怪，实际上用下来感觉还挺合理的。
+
+下一个问题就是我们需要在合适的时机，按使用频率更新 tab 的显示。我是在 buffer-list-update-hook 里，追踪 (buffer-list) 的变化来更新的，但在以下情况下不更新：
+
+    活动的 buffer 是 minibuffer 时
+    新增或删除的 buffer 是隐藏的 buffer（名字以空格开头）
+    使用「前一个/后一个 tab」命令时
+
+这样 tab 就不会在不合适的时候重新排序了。实际使用时感觉只有在用 switch-buffer 命令或切窗口的时候会更新。
+效果
+
+因为只展示四个 tab，占用的空间不会太长，所以我把它做到了 modeline 。
+
+关于我的参考实现
+
+由于在 modeline 上展示 tabs 必须把其他信息右对齐才会美观，考虑到大多数人的 modeline 配置都没有右对齐相关的技巧，这样就没法提供一个开箱即用的 UI，所以我就不打算把这个做成单独的包了。
+
+想要体验的同学可以直接把这个文件拿下来，参考 toki-tabs-mode，toki-tabs-string 和 toki-tabs-update-hook 的文档给它配置一个 UI。
+
+不使用 tab 的同学或许也可以试试 toki-tabs-switch-to-buffer-in-group，它允许你切换到当前分组的 buffer，并且 buffer 是按使用频率排序的，相信也会很顺手。

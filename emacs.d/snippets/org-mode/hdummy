@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dummy heading to align subheading in slides
+# --
+* 
+:properties:
+:attr_odt: :style-prefix "Heading_20_" :style-suffix "_unnumbered" :page-break t
+:end:

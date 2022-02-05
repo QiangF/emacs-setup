@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: odp chinese presentation file title
+# --
+#+odt_extra_styles: <draw:fill-image draw:name="OrgTitlePage"
+#+odt_extra_styles: xlink:href="file:///home/q/.dotfiles/emacs/org/pansteel/Cover.png"/>
+#+odt_extra_styles: <draw:fill-image draw:name="Standard"
+#+odt_extra_styles: xlink:href="file:///home/q/.dotfiles/emacs/org/pansteel/Standard.png"/>
+#+odt_extra_styles: <draw:fill-image draw:name="EpiloguePage"
+#+odt_extra_styles: xlink:href="file:///home/q/.dotfiles/emacs/org/pansteel/Epilogue.png"/>
+#+options:  toc:nil author:nil tex:t latex:t :H 10
+#+language: zh-CN
+#+odt_display_outline_level:  0
+#+odt_styles_file: ~/.dotfiles/emacs/org/user/presentation_cn.xml
+#+odt_content_template_file: ~/.dotfiles/emacs/org/styles/OrgOdtContentTemplate.xml
+#+title: ${1}
+#+toc: headlines 2
+#+pagebreak:
+
+${0}

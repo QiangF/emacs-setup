@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: code
+# --
+\begin{lstlisting}
+$0
+\end{lstlisting}

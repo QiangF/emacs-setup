@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: gaussian
+# key: eg_gaussian
+# --
+def gaussian(x, height, center, width, offset):
+    return height*np.exp(-(x - center)**2/(2*width**2)) + offset

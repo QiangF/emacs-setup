@@ -1,0 +1,9 @@
+This is a emacs setup using "setup" and "quelpa". You can try it by put the emacs.d directory at "~/.emacs.d".
+
+Please feel free to open issues if you have any suggestions or corrections. Thank you!
+
+https://git.sr.ht/~pkal/setup
+
+https://www.emacswiki.org/emacs/SetupEl
+
+https://github.com/quelpa/quelpa

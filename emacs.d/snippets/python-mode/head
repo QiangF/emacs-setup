@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: head
+# --
+# -*- coding: utf-8-unix -*-
+import sys; sys.dont_write_bytecode = True

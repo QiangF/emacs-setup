@@ -1,0 +1,149 @@
+* luna-key
+luna-def-key has some other keywords. Here is all of them:
+:keymaps 	Bind in this keymap
+:prefix 	Bind with this prefix key
+:clear 	Clear all states
+:--- 	Same as :clear
+:when 	Bind conditional command
+
+see also:
+https://github.com/jwiegley/use-package/blob/master/bind-key.el
+https://github.com/manateelazycat/lazy-load
+
+** :when
+The :when keyword is fun, I can bind keys that only activates under certain condition, like when the region is active. I used to do that with emulation-mode-map-alists, but that’s not as flexible as :when. By flexible I mean this:
+
+:when (lambda ()
+         (and mark-active
+              (not (derived-mode-p 'magit-status-mode))))
+
+** :prefix :leader
+luna-key.el does this by “preset keywords”:
+
+(luna-key-def-preset :leader
+  :prefix "C-c")
+;; bind "C-c o" to `other-window'
+(luna-def-key
+ :leader
+ "o" 'other-window)
+
+You can think of :leader as equivalent to :prefix "C-c" (spoiler alert: they are literally equivalent).
+
+** remaps
+luna-def-key also works for remaps and keyboard macros. IIRC general.el doesn’t allow keyboard macros.
+
+(luna-def-key
+ [remap fn1] #'fn2
+ "C-d" "woome")
+
+** which-key
+Finally, we have which-key.el support! (Even though I never get to look at which-key panels.)
+
+(luna-def-key
+ :leader
+ "b" '("Buffer")
+ "bm"  '("goto message buffer" .
+         (lambda () (interactive) (switch-to-buffer "*Messages*")))
+ "bs"  '("goto scratch buffer" .
+         (lambda () (interactive) (switch-to-buffer "*scratch*"))))
+
+This syntax is inline with define-key.
+** detail
+Implementation details
+
+When I say you can think of luna-def-key as a little stateful machine, I mean it. It is a little stateful machine, consuming arguments one by one. Here is a slightly simplified definition of luna-def-key.
+
+(defun luna-def-key (&rest args)
+  (let (arg map-list prefix condition)
+    (while args
+      (setq arg (pop args))
+      (pcase arg
+        (:keymaps
+         ;; Next argument is either a keymap or a list of them.
+         (setq map-list (pop args)))
+        (:prefix
+         ;; Next argument is a key prefix.
+         (setq prefix (pop args)))
+        ;; Clear all states.
+        ((or :clear :---) (setq prefix nil
+                                map-list nil
+                                condition nil))
+        (:when
+         ;; Next argument is a condition predicate.
+         (setq condition (pop args)))
+        ;; Preset modifiers.
+        ((pred keywordp)
+         (when-let ((preset (alist-get arg luna-key-preset-alist)))
+           (setq args (append preset args))))
+        ;; Next two arguments are key and value.
+        (_ (let ((key arg)
+                 (def (pop args)))
+             (luna-key-define key def map-list prefix condition)))))))
+
+Here args is the arguments luna-def-key receives. We have three states: map-list (:keymaps), prefix (:prefix), and condition (:when). If we see these keywords, we pop next arguments out and set the state to it. If we see :clear, we set all states to nil. If we see other keywords, it must be a preset, and we just get its definitions and push them to the beginning of the argument list (so, literally equivalent). If we see anything else, it must be a key followed by a value, we bind them with current states.
+
+* luna-load-package
+
+luna-load-package is straightforward:
+
+(pp (macroexpand-1 '(luna-load-package pkg
+                      :load-path "load-path"
+                      :init (setq var1 'val1)
+                      :mode "\\.txt"
+                      :command command
+                      :hook ((prog-mode-hook text-mode-hook) . function)
+                      :config (setq var2 'val2))))
+
+expands to
+
+(condition-case err
+    (progn
+      (add-to-list 'luna-package-list 'pkg)
+      (when (not (luna-installed-p 'pkg))
+        (error "%s not installed" 'pkg))
+      (autoload #'pkg "pkg" nil t)
+      (autoload #'function "pkg" nil t)
+      (add-to-list 'load-path "load-path")
+      (setq var1 'val1)
+      (add-to-list 'auto-mode-alist
+                   '("\\.txt" . pkg))
+      (add-hook 'prog-mode-hook #'function)
+      (add-hook 'text-mode-hook #'function)
+      (with-eval-after-load 'pkg
+        (setq var2 'val2))
+      nil)
+  ((debug error)
+   (warn "Error when loading %s: %s" 'pkg
+         (error-message-string err))))
+
+    The form is wrapped in a condition-case form, so any error occurred inside doesn’t hang the startup.
+    We display a warning if the package is not installed.
+    There is an extra form, (add-to-list 'luna-package-list 'pkg). luna-package-list contains all the package that my configuration needs. Later I can use luna-install-all to install all the packages in the list.
+    For each :hook function and :mode function, we also add autoloads for them.
+
+** Implementation details
+
+The macro is straightforward: the argument list looks like a special plist:
+
+(:command1 arg1 arg2 :command2 arg1 arg2 arg3 ...)
+
+We first transform it into a regular alist: ((COMMAND . ARG-LIST) ...). Then, we iterate over each (COMMAND . ARG-LIST) pair and expand according to COMMAND. For example:
+
+(pcase command
+  ...
+  (:config `((with-eval-after-load ',package
+             ,@arg-list))))
+
+Finally, we assemble each expanded commands together, wrapping condition-case around and add some global forms like adding to luna-package-list, and require form:
+
+`(condition-case err
+     (progn
+       (add-to-list 'luna-package-list ',package)
+       (when (not (luna-installed-p ',package))
+         (error "%s not installed" ',package))
+       ,@autoload-list
+       ;; BODY is the expanded forms.
+       ,@body
+       ,(unless defer-p `(require ',package)))
+   ((debug error) (warn "Error when loading %s: %s" ',package
+                        (error-message-string err))))

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: eg text
+# key: eg_text
+# --
+host.text(x, y, u"气压", fontproperties=myfont, ha='center')
+fig.text(0.07, 0.5, u"积水高度", fontproperties=myfont, fontsize = 12, va='center', rotation='vertical')

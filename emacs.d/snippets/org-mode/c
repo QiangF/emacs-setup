@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: multiple columns
+# --
+#+ODT_AUTOMATIC_STYLES: <style:style style:name="${1}" style:family="section">
+#+ODT_AUTOMATIC_STYLES:  <style:section-properties fo:background-color="#ffffff" style:editable="false">
+#+ODT_AUTOMATIC_STYLES:   <style:columns fo:column-count="${0}" fo:column-gap="0.1cm"/>
+#+ODT_AUTOMATIC_STYLES:  </style:section-properties>
+#+ODT_AUTOMATIC_STYLES: </style:style>

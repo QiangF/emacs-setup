@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: newcommand
+# --
+\newcommand{\\${1:name}}${2:[${3:0}]}{$0}

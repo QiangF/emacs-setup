@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: page break before
+# --
+#+attr_odt: :page-break "after"

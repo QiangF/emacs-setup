@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: odt sub fig
+# --
+#+caption: ${0}
+#+label: ${1}
+#+attr_odt: :category "figure" :list-table t
+-
+  -
+    #+caption[(a)]:
+    #+attr_odt: :width 7.1 :style "Caption"
+    [[]]
+  -
+    #+caption[(b)]:
+    #+attr_odt: :width 7.1 :style "Caption"
+    [[]]

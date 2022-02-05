@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# --
+def predict_encoding(file_path, n_lines=20):
+    '''Predict a file's encoding using chardet'''
+    import chardet
+    # Open the file as binary data
+    with open(file_path, 'rb') as f:
+        rawdata = b''.join([f.readline() for _ in range(n_lines)])
+    return chardet.detect(rawdata)['encoding']

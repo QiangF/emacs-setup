@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: odt highlight
+# --
+@@odt:<text:span text:style-name="highlight">${0}</text:span>@@

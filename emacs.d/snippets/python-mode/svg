@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: eg svg
+# key: eg_svg
+# --
+import svgwrite
+dwg = svgwrite.Drawing( svg_filename, size = (20,20) )
+dwg.add(dwg.path("M 0,10 1,6 2,5 12,5", fill="none", stroke="black", stroke_width = 0.1))
+dwg.save( )

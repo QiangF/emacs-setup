@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: alg
+# --
+\begin{algorithmic}
+$0
+\end{algorithmic}

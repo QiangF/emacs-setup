@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: scipy leastsq
+# key: eg_scipy_leastsq
+# --
+from scipy import optimize
+errfunc = lambda p, x, y: 
+optim, success = optimize.leastsq(errfunc, guess[:], args=(data[:,0], data[:,1]))

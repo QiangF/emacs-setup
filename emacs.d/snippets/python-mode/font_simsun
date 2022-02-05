@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: set SimSun as default font
+# --
+mpl.rcParams['axes.unicode_minus'] = False  
+mpl.rcParams['font.family'] = 'SimSun' 
+mpl.rcParams.update({'font.size': 6})
+myfont = mpl.font_manager.FontProperties(fname='/home/q/.dotfiles/x/fonts/simsun.ttf')  

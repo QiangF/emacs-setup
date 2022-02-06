@@ -12,7 +12,7 @@ We need to manually save and restore it. See manual for more info.")
   "When dumping, load environment from shell into this variable.
 At startup, load environment from this variable.")
 
-(defvar luna-dump-file (expand-file-name "~/.emacs.d/dump/dump-file")
+(defvar luna-dump-file (expand-file-name "~/.emacs.d/setup/dump-file")
   "Dump file location.")
 
 (defmacro luna-if-dump (then &rest else)
@@ -95,7 +95,7 @@ At startup, load environment from this variable.")
      :name "dump"
      :buffer buf
      :command (list "emacs" "--batch" "-q"
-                    "-l" (expand-file-name "~/.emacs.d/dump/dump.el")))
+                    "-l" (expand-file-name "~/.emacs.d/setup/dump.el")))
     (display-buffer buf)))
 
 (provide 'dump-init)

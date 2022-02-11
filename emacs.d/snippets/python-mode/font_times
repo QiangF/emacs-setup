@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: set Times New Roman as default font
-# --
-mpl.rcParams['axes.unicode_minus'] = False  
-mpl.rc('font',family='Times New Roman')

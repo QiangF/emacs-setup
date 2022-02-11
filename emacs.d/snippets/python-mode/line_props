@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: line props
-# key: eg_line_props
-# --
-color='black',markersize=3,markevery=10,linewidth=0.5

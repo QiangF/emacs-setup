@@ -1,6 +1,0 @@
-* change yay to paru
-* command
-** install core
-~/.dotfiles/emacs/emacs.d/site-lisp/eaf/install-eaf.py --install-core-deps --ignore-node-deps --use-gitee
-** install browser (use git clone instead)
-~/.dotfiles/emacs/emacs.d/site-lisp/eaf/install-eaf.py --use-gitee --install browser

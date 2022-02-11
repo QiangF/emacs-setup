@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: emph
-# --
-\emph{$1}$0

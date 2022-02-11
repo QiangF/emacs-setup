@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: unnumbered heading
-# --
-:properties:
-:attr_odt: :style-prefix "" :style-suffix "_unnumbered" :list-style ""
-:end:

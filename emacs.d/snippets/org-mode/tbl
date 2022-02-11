@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: odt table
-# --
-#+caption: ${1}
-#+label: tbl:${2}
-#+attr_odt: :style "GriddedTable"
-${0}

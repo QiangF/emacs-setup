@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: odt automatic styles
-# --
-#+odt_automatic_styles: ${0}

@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: python
-# --
-\lstset{language=python}
-\begin[language=python]{lstlisting}
-$0
-\end{lstlisting}

@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: odt page with style
-# --
-#+attr_odt: :page-style "OrgTitlePage" :page-break t

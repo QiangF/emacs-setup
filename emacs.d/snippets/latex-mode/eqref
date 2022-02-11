@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: eq_ref
-# --
-(equation \ref{${0:}})

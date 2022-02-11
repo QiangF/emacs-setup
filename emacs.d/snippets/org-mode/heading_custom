@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: customise heading
-# --
-:properties:
-:attr_odt: :style-prefix "${1:Heading_20_}" :style-suffix "${2:_unnumbered}" :list-style "${0:OrgNumberedParentheseList}"
-:end:
-# to update toc: insert -> toc > check based on outline

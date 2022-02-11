@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: byte_io 
-# --
-from io import BytesIO
-b=io.BytesIO(s.encode())
-numpy.genfromtxt(b)

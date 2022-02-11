@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: acronym
-# setting below enables print acronym only with 
-# \printglossary[type=acronyms]
-# \newglossaryentry{acr:${1:acronym}}{type=acronyms,name=${1:$(upcase yas-text)},
-# description={${2:description}}}
-# --
-\newacronym{${1:label}}{${1:$(upcase yas-text)}}{${2:Name}}

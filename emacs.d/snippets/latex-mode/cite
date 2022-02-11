@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: cite
-# --
-\cite{$1} $0

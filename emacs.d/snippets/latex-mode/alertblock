@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: alertblock
-# --
-\begin{alertblock}{$2}
-        $0
-\end{alertblock}

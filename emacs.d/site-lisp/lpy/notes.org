@@ -1,7 +1,0 @@
-* install
-use cook recipe or install dependencies manually
-https://github.com/abo-abo/cook
-* python dependency
-pip install jedi readline
-* emacs dependency
-company, jedi, company-jedi, lispy

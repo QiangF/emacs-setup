@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: save plot
-# key: eg_save_figure
-# --
-plt.savefig(path, dpi=300, pad_inches=0, format = 'png', bbox_inches='tight')

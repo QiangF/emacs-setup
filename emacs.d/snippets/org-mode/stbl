@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: odt small table
-# --
-#+caption: ${1}
-#+label: tbl:${2}
-#+attr_odt: :style "GriddedTable" :p-style "${3:50%}_OrgTable"
-${0} 

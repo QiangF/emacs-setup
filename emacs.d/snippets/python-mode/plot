@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: plot
-# --
-line, = ax.plot(x, y, "g-", label=u"")

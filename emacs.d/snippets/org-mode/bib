@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: odt bibliography
-# notes: inser bib with just #+bibliography:
-# --
-#+odt_jabref_citation_style: "Numeric"
-#+bib_file: "./my_bib.bib"
-#+bibliography:

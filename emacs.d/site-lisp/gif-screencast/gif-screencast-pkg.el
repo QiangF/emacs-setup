@@ -1,2 +1,0 @@
-;;; -*- no-byte-compile: t -*-
-(define-package "gif-screencast" "20190326.849" "One-frame-per-action GIF recording" '((emacs "25.1")) :stars '("") :commit "248d1e158405e6cba2c65ecaed40e2c59b089cd8" :keywords '("multimedia" "screencast") :authors '(("Pierre Neidhardt" . "mail@ambrevar.xyz")) :maintainer '("Pierre Neidhardt" . "mail@ambrevar.xyz") :url "https://gitlab.com/ambrevar/emacs-gif-screencast")

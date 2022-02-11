@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: odt chinese text file title
-# --
-#+options:  toc:nil author:nil tex:t latex:t :H 10
-#+language: zh-CN
-#+title: ${1}
-#+toc: headlines 2
-#+pagebreak:
-${0}

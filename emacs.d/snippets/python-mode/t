@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: trace
-# key: t
-# --
-print("$1:", $1)

@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: formula
-# --
-#+tblfm: @>$3=vsum(@2..@-1);%.2f

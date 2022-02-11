@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@mozilla/readability": "^0.4.1",
-    "darkreader": "^4.9.34"
-  }
-}

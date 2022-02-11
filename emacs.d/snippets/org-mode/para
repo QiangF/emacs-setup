@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: paragraph
-# --
-#+attr_odt: :style "OrgCenter"
-#+begin_paragraph
-${0}
-#+end_paragraph

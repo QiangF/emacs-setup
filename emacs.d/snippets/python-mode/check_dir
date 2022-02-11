@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: check if dir exist, if not, create dir
-# --
-if not os.path.exists(${0}):
-    os.makedirs(${0})

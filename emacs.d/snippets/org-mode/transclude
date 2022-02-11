@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: transclude
-# --
-#+ATTR_ODT: :transclude t
-[[file:subdocument.odt]]

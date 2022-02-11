@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: two columns section
-# --
-#+attr_odt: :style "OrgTwoColumnSection" :p-style "Caption"
-#+begin_section
-${0}
-#+end_section

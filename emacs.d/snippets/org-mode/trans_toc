@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: toc as a sub document
-# --
-#+attr_odt: :transclude t
-[[file:~/.dotfiles/emacs/org/styles/toc.odt]]

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: post_mortem
-# key: pm
-# --
-pdb.post_mortem(sys.last_traceback)$0

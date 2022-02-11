@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: includegraphics
-# --
-\includegraphics${1:[$2]}{$0}

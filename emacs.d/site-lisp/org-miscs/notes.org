@@ -1,2 +1,0 @@
-bklinks.el org-roam
-https://github.com/casouri/lunarymacs

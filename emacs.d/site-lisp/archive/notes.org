@@ -1,0 +1,20 @@
+One of the other important differences between zip and tar is that zip compresses the data in
+small chunks, whereas when you compress a tar file, you compress the whole thing at once. The
+latter gives better compression ratios, but in order to extract a single file at the end of the
+archive, you must decompress the whole thing to get to it. Thus the zip format is better at
+extracting a single file or two from a large archive. 7z and dar allow you to choose to compress
+the whole thing ( called "solid" mode ) or small chunks for easy piecemeal extraction.
+
+to read a single file from a tar.gz or the like, you will need to decompress the whole gz stream
+till the enough of the tar file is exposed so you can extract it. Zip allows you to compress and
+pull out each file individually. 7z can have either behavior.
+
+a Python tool for indexing TAR files for fast access (writes a separate file)
+
+https://github.com/devsnd/tarindexer
+
+an extension to embed the indexat the end of the TAR file itself; any RAT-produced TAR file is compatible with standard TAR
+
+https://github.com/mcuadros/go-rat
+https://github.com/mxmlnkn/ratarmount
+https://github.com/markokr/rarfile

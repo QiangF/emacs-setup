@@ -1,0 +1,2 @@
+;;; Generated package description from /home/q/.emacs.d/elpa/volume-20201002.1022/volume.el  -*- no-byte-compile: t -*-
+(define-package "volume" "20201002.1022" "tweak your sound card volume from Emacs" 'nil :commit "afb75a5f7fe41eb28c8dbb1378e80d103eea05c7" :authors '(("Daniel Brockman" . "daniel@brockman.se")) :maintainer '("Daniel Brockman" . "daniel@brockman.se") :url "http://www.brockman.se/software/volume-el/")

@@ -1,0 +1,2 @@
+notify emacs on im state change
+fcitx-remote -t ; emacsclient -e '(setq my-imbot--active-checked (imbot--active-p))'

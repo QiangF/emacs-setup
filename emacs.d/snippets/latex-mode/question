@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: question
+# --
+\question{$0}

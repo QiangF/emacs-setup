@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: Figure_ref
+# --
+Figure~\ref{${0:}}

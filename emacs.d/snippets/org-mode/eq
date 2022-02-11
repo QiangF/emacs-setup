@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: odt equation
+# --
+#+label: eq:${2}
+\begin{equation*}
+${0}
+\end{equation*}

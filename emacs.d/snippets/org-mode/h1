@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: first heading with page break
+# --
+* ${0}
+:properties:
+:attr_odt: :page-style "Standard" :page-number 1 :page-break t
+:end:

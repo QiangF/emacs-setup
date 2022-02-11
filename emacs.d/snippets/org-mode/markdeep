@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: markdeep
+# --
+<meta charset="utf-8">
+${0}
+<!-- Markdeep: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+<script src="markdeep.js" charset="utf-8"></script>
+<script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

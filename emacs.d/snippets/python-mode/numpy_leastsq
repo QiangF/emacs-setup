@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: numpy leastsq
+# key: eg_numpy_leastsq
+# --
+# y = f(x, x**2, 1)
+M = np.column_stack((x**2, x, np.ones_like(x)))
+k, _, _, _ = np.linalg.lstsq(M, y) # least-square fit of M * k = y

@@ -1,0 +1,10 @@
+Puni 的主要工作是以系统、通用的方式修正了它们的行为，通过：
+
+    连续在不同方向上调用 forward-sexp
+    syntax table
+    常识
+    不做语言特定的处理
+
+基于此，Puni 提供了一对通用的 puni-strict-forward-sexp 和 puni-strict-backward-sexp 函数，这些函数和我们期望的一样：只会跨过面前的平衡表达式，在不能继续前进时会停下来。Puni 就是在这两个函数上建造起来的。
+
+由于 Puni 采用了这样一种通用的方案，它自动支持许多 major mode。只要 major mode 提供的 forward-sexp-function 不算太差，Puni 都可以工作。在最差的情况下，major mode 没有提供这个函数，那么 Puni 会用 Emacs 内置的那个，可以在 ()，[]，{} 这样的括号以及字符串中正常工作，这对很多语言来说也很够用了。

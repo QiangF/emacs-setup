@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: flow chart
+# --
+#+begin_src ditaa :file ${1} :cmdline -S -T -o
+${0}
+#+end_src 

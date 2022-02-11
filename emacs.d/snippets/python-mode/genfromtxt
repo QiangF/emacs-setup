@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: genfromtxt
+# key: eg_genfromtxt
+# --
+np.genfromtxt(file_name,delimiter=',',max_rows=3)
+np.genfromtxt(file_name,delimiter=',',skip_header=3)

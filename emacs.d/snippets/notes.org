@@ -1,0 +1,4 @@
+when snippet is saved, it is auto loaded
+
+specify default value:
+${0:default}

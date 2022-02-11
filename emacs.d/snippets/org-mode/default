@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: odt default styles
+# --
+#+odt_styles_file: ~/.dotfiles/emacs/emacs.d/site-lisp/org-odt/etc/styles/OrgOdtStyles.xml
+#+odt_content_template_file: ~/.dotfiles/emacs/emacs.d/site-lisp/org-odt/etc/styles/OrgOdtContentTemplate.xml

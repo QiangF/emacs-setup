@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: four columns section
+# --
+#+attr_odt: :style "four_columns" :style "Caption"
+#+begin_section
+${0}
+#+end_section 

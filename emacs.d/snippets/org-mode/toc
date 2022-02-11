@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: toc 
+# --
+#+toc: headlines 2 local

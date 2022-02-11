@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: odt title page
+# --
+#+attr_odt: :style "Title"
+钛及钛合金攻关分队轧制棒线材组
+\\\\
+2018年11月份工作汇报
+#+attr_odt: :style "OrgSubtitle" :page-break "after"
+汇报人 方强

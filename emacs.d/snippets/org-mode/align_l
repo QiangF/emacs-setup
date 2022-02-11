@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: align left
+# --
+#+attr_odt: :style "align_left"

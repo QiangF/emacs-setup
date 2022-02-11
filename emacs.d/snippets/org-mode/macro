@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: org macro
+# --
+#+macro: s1 replacement text; ; \$1, \$2 are arguments

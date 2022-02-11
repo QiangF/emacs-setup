@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: axes props
+# --
+host.set_xticklabels([])
+host.set_xlim([-58,75])
+host.set_ylim(ymin=-0.3)
+ylim=host.get_ylim()
+host.text(x, y, u"气压", fontproperties=myfont, ha='center')
+# vetical align va='center', rotation='vertical'
+host.legend(prop=myfont,loc='best')

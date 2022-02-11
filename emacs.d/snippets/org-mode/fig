@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: odt fig
+# --
+#+caption: ${1}
+#+label: fig:${2}
+#+attr_odt: :height ${3:6.1} :anchor "as-char"
+[[${0}]]

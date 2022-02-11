@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: odt centered fig
+# --
+#+caption: ${1}
+#+label: fig:${2}
+#+attr_odt: :width ${3:7.1} :style "Caption"
+[[${0:odt_fig}]]

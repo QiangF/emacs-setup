@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: glspl
+# --
+\glspl{${1:label}}

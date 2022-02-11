@@ -1,0 +1,26 @@
+{
+  "pacman": [
+    "aria2"
+  ],
+  "apt": [
+    "aria2"
+  ],
+  "dnf": [
+    "aria2"
+  ],
+  "pkg": [
+    "aria2"
+  ],
+  "pip": {
+    "linux": [
+      "pysocks"
+    ],
+    "win32": [
+      "pysocks"
+    ],
+    "darwin": [
+      "pysocks"
+    ]
+  },
+  "npm_install": true
+}

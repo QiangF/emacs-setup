@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: odt land scape page
+# --
+#+attr_odt: :style "Heading_20_1_unnumbered" :page-style "OrgFrontMatterPage" :page-number 1
+
+${0}

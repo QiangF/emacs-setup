@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: heading with page break
+# --
+* ${0}
+:properties:
+:attr_odt: :page-break t
+:end:

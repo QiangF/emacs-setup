@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: odt list with No. in parentheses
+# --
+#+attr_odt: :style "OrgNumberedParentheseList"

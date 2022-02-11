@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: python export block
+# --
+#+BEGIN_SRC python :exports results :results output raw
+#!/home/my_usr/bin_repo/conda3/bin/python
+# -*- coding: utf-8 -*-   
+${0}
+#+END_SRC

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: block
+# --
+\begin{block}{$1}
+        $0
+\end{block}

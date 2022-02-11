@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: Gls
+# --
+\Gls{${1:label}}
